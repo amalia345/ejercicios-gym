@@ -491,13 +491,72 @@ primero.innerText = removeChar('aAlejandr')
 
 
 function makeChocolate(small, big, goal) {
-    const remainder = goal-(big * 5) 
-    if (remainder <= small && remainder >=0) {
+    const remainder = goal - (big * 5)
+    if (remainder <= small && remainder >= 0) {
         return remainder
     }
-    if (remainder <0) {// sis  epuede cubrir
+    if (remainder < 0) {// sis  epuede cubrir
         return goal % 5
-    } 
+    }
     return -1
 }
 primero.innerText = makeChocolate(9, 2, 16) // 9 + 10 total 19
+
+function teenSum(a, b) {
+    if (a >= 13 && a <= 19 || b >= 13 && b <= 19) {
+        return 19
+    }
+    return a + b
+
+}
+primero.innerText = teenSum(10, 13)
+
+function filter_list(l) {
+    let numberArray = []
+    for (let index = 0; index < l.length; index++) {
+        if (typeof l[index] === 'number') {
+            numberArray.push(l[index])
+        }
+    }
+    return numberArray
+}
+primero.innerText = filter_list([10, 'hola', 13, 2, 'Jaci', 5, 7, 6])
+
+function createPhoneNumber(n) {
+    if (n.length !== 10) {
+        return ("No tiene 10 numeros");
+    }
+    return `(${n.slice(0, 3).join('')}) ${n.slice(3, 6).join('')}-${n.slice(6, 10).join('')}`
+}
+primero.innerText = createPhoneNumber([9, 5, 3, 8, 4, 6, 9, 5, 7, 6])
+
+function moveZeros(arr) {
+    let resultados = [];// Creamos un array vacio para guarda todo
+    let countZeros = 0;//Guarda cuantos 0 hay
+    console.log("el total de ceros al inicio es " + countZeros);
+    for (let i = 0; i < arr.length; i++) {//clico que itera arr 
+        console.log('Elemento actual ' + arr[i]);
+        if (arr[i] === 0) { //si el elemento actual de arr es = 0
+            countZeros++//cuenta cuantos 0 hay
+        } else {
+            resultados.push(arr[i]) //Si no es 0 guardalos en el array vacio 
+        }
+    }
+    console.log("el total de ceros al final es " + countZeros); //4.lenght
+
+    for (let i = 0; i < countZeros ; i++) {//Ponemos el numero de 0 al final array resultados
+        resultados.push(0)
+    }
+    return resultados
+}
+primero.innerText = moveZeros([21, 'choco', 0, 1, 0, 1, 0, 3, false, 1])
+
+function arrayDiff(a, b) { //Declaramos a y b como parametros
+return a.filter(item=>!b.includes(item));//filter itera todos los elementos de a y los compara 
+}//los comparamos usando includes que checa que el elemento actual de a esta dentro de b
+primero.innerText = arrayDiff ([1,2,2,2,3], [1]) // llamamos a la funcion pasandole dos arrays
+
+function plusTwo(a, b){
+  return a.concat(b)
+}
+primero.innerText = plusTwo([1, 2], [3, 4])
