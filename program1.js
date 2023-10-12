@@ -560,3 +560,5 @@ function plusTwo(a, b){
   return a.concat(b)
 }
 primero.innerText = plusTwo([1, 2], [3, 4])
+
+
